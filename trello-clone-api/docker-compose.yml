@@ -1,0 +1,21 @@
+version: '3.6'
+
+services:
+    trello-db:
+        build:
+            context: ./DB
+            dockerfile: Dockerfile
+        ports:
+            - 3307:3306
+        networks:
+            - trello-net
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_ROOT_PASSWORD=croissant123!
+            - MYSQL_DATABASE=trello
+        volumes:
+            - ~/trello_db:/var/lib/mysql
+        restart: always
+
+networks:
+    trello-net:
