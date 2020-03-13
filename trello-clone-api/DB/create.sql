@@ -1,0 +1,1 @@
+CREATE DATABASE `trello` CHARACTER SET utf8;
