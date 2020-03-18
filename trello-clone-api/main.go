@@ -15,6 +15,7 @@ func main() {
 
 	mariaDB = new(MariaDB)
 
+	// mariadb connect
 	if err := mariaDB.connect(); err != nil {
 		log.Fatal(err)
 	}
@@ -23,7 +24,7 @@ func main() {
 			log.Fatal(err)
 		}
 	}()
-
+	// mariadb migrate
 	if err := mariaDB.migrate(); err != nil {
 		log.Fatal(err)
 	}

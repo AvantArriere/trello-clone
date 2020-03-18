@@ -5,6 +5,7 @@ import "time"
 // User user
 type User struct {
 	ID             uint       `gorm:"primary_key" json:"id"`
+	Email          string     `gorm:"type:varchar(50); not null; unique" json:"email"`
 	FirstName      string     `gorm:"type:varchar(30); not null" json:"first_name"`
 	LastName       string     `gorm:"type:varchar(30); null; default:''" json:"last_name"`
 	LastLogin      time.Time  `gorm:"null" json:"last_login"`
@@ -21,7 +22,6 @@ type User struct {
 type UserDetail struct {
 	user         User      `gorm:"ForeignKey:UserID"`
 	UserID       uint      `gorm:"not null;unique" json:"user_id"`
-	Email        string    `gorm:"type:varchar(50); not null; unique"`
 	Notification bool      `gorm:"not null; default:1" json:"notificaiton"`
 	CreatedAt    time.Time `json:"created_at"`
 	UpdatedAt    time.Time `json:"updated_at"`
