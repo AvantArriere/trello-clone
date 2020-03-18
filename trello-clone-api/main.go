@@ -3,8 +3,11 @@ package main
 import (
 	"log"
 	"os"
+
+	"github.com/gin-gonic/gin"
 )
 
+var router *gin.Engine
 var mariaDB *MariaDB
 
 func main() {
