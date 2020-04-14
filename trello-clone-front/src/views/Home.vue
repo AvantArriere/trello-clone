@@ -30,10 +30,13 @@
                       height="50"
         ></v-text-field>
         <v-btn color="success" 
-                x-large 
-                @click="onSubmit"
-                >sign up - it's free</v-btn>
+               x-large 
+               @click="onSubmit"
+               >sign up - it's free</v-btn>
+        
+       
       </v-form>
+       
     </div>
   </div>
 </div>
