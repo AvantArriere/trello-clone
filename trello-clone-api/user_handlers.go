@@ -62,6 +62,21 @@ func SignUp(ctx *gin.Context) {
 
 	// send confirm email must be added here
 	/**/
+	// sendEmail()
 
 	ctx.Status(http.StatusCreated)
 }
+
+// func sendEmail() {
+// 	var from = "leeyjeen@naver.com"
+// 	var msg = []byte("dummy message")
+// 	var recipients = []string{"leeyjeen@naver.com"}
+// 	auth := smtp.PlainAuth(
+// 		"",
+// 		"leeyjeen@naver.com",
+// 		"temppassword",
+// 		"smtp.naver.com:587")
+// 	if err := smtp.SendMail("smtp.naver.com:587", auth, from, recipients, msg); err != nil {
+// 		log.Fatal(err)
+// 	}
+// }
