@@ -20,6 +20,7 @@ func SetUpRouter() *gin.Engine {
 
 	// health check
 	r.GET("/")
+	r.POST("/sign-up", SignUp)
 	r.POST("/login", authMiddleware.LoginHandler)
 	r.GET("/refresh_token", authMiddleware.RefreshHandler)
 	return r
