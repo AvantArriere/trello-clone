@@ -1,5 +1,5 @@
 <template>
-<div class="signup">
+<div class="login">
   <div class="title">
     trello
   </div>
@@ -7,7 +7,7 @@
     <v-card class="form-card mx-auto"
             max-width = "450"   > 
       <v-form class="pa-9">
-        <h1>Sign up for your account</h1>
+        <h1>Log in to Trello</h1>
         <v-text-field outlined dense
                       placeholder="Enter email"
                       color="rgb(250, 251, 252)"
@@ -16,30 +16,27 @@
                       required
         ></v-text-field>
         <v-text-field outlined dense
-                      placeholder="Enter Full Name"
-                      color="#FAFBFC"
-                      v-model="form.fullName"
-                      :rules="rules.fullName"
-                      required
-        ></v-text-field>
-        <v-text-field outlined dense
-        placeholder="Create Password"
+        placeholder="Enter Password"
                       color="#FAFBFC"
                       v-model="form.password"
                       :rules="rules.password"
                       required
         ></v-text-field>
         <v-btn @click="onSubmit" 
-                :disabled="invalid"
+                color=success
                 width="100%"
                 height="30"
-        >Sign Up
+        >Log in
         </v-btn>  
         <v-divider class="my-5"></v-divider>
-        <span class="bottom-link"
-              @click="$router.push('login')"
-        >Already have an account? Log In
-        </span>
+        <ul class="bottom-links">
+          <li style="list-style: none;">
+            <a class="bottom-link" @click="$router.push('recovery')">Can't log in?</a>
+          </li>
+          <li>
+            <a class="bottom-link" @click="$router.push('signup')">Sign up for an account</a>
+          </li>
+        </ul>
       </v-form>
     </v-card>
   </div>
@@ -99,12 +96,15 @@ h1 {
   margin-bottom: 25px;
 
 }
+.bottom-links {
+  display: inline-block;
+  padding: 0;
+  width: 100%;
+}
+
 .bottom-link {
-  text-align: center;
   font-size: 14px;
   color:hsl(216, 95%, 41%);
-  display: block;
   cursor: pointer;
-
 }
 </style>

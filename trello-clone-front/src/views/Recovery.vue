@@ -7,7 +7,8 @@
     <v-card class="form-card mx-auto"
             max-width = "450"   > 
       <v-form class="pa-9">
-        <h1>Sign up for your account</h1>
+        <h1>Can't log in?</h1>
+        <p class="send-to">We'll send a recovery link to</p>
         <v-text-field outlined dense
                       placeholder="Enter email"
                       color="rgb(250, 251, 252)"
@@ -15,30 +16,16 @@
                       :rules="rules.email"
                       required
         ></v-text-field>
-        <v-text-field outlined dense
-                      placeholder="Enter Full Name"
-                      color="#FAFBFC"
-                      v-model="form.fullName"
-                      :rules="rules.fullName"
-                      required
-        ></v-text-field>
-        <v-text-field outlined dense
-        placeholder="Create Password"
-                      color="#FAFBFC"
-                      v-model="form.password"
-                      :rules="rules.password"
-                      required
-        ></v-text-field>
         <v-btn @click="onSubmit" 
                 :disabled="invalid"
                 width="100%"
                 height="30"
-        >Sign Up
+        >Send recovery link
         </v-btn>  
         <v-divider class="my-5"></v-divider>
         <span class="bottom-link"
               @click="$router.push('login')"
-        >Already have an account? Log In
+        >Return to login
         </span>
       </v-form>
     </v-card>
@@ -83,6 +70,9 @@ export default {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
+}
+.send-to {
+  color: #5E6C84;
 
 
 }
